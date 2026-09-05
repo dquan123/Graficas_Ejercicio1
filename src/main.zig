@@ -46,42 +46,6 @@ pub fn main() !void {
     var last_frame_time = Clock.now(io);
     var delta: i64 = 1;
 
-    const espejo = Material{
-        .Color = V3FromColor(htmlColor("#fff")),
-        .Propiedades = .{
-            .Albedo = 0,
-            .Especular = 1,
-            .Reflectividad = 0.9,
-            .Transparencia = 0,
-        },
-        .Especular = 100,
-        .Refractive_index = 0,
-    };
-
-    const vidrio = Material{
-        .Color = V3FromColor(htmlColor("#aaa")),
-        .Propiedades = .{
-            .Albedo = 0,
-            .Especular = 0.5,
-            .Reflectividad = 0.1,
-            .Transparencia = 0.8,
-        },
-        .Especular = 125,
-        .Refractive_index = 1.5,
-    };
-
-    const diamante = Material{
-        .Color = V3FromColor(htmlColor("#aaa")),
-        .Propiedades = .{
-            .Albedo = 0,
-            .Especular = 0.5,
-            .Reflectividad = 0.1,
-            .Transparencia = 0.8,
-        },
-        .Especular = 125,
-        .Refractive_index = 2.417,
-    };
-
     const marmol = Material{
         .Color = V3FromColor(htmlColor("#66664c")),
         .Propiedades = .{
@@ -98,7 +62,17 @@ pub fn main() !void {
         .{ .Sphere = .{
             .center = .{ .x = 10, .y = 0, .z = -40 },
             .radius = 5,
-            .material = espejo,
+            .material = .{
+                .Color = V3FromColor(htmlColor("#3366cc")),
+                .Propiedades = .{
+                    .Albedo = 0.7,
+                    .Especular = 0.6,
+                    .Reflectividad = 0,
+                    .Transparencia = 0,
+                },
+                .Especular = 60,
+                .Refractive_index = 0,
+            },
         } },
         .{ .Sphere = .{
             .center = .{ .x = 12.5, .y = 0, .z = -60 },
@@ -123,30 +97,60 @@ pub fn main() !void {
         .{ .Sphere = .{
             .center = .{ .x = 22, .y = 0, .z = -45 },
             .radius = 5,
-            .material = espejo,
+            .material = .{
+                .Color = V3FromColor(htmlColor("#33aa55")),
+                .Propiedades = .{
+                    .Albedo = 0.7,
+                    .Especular = 0.5,
+                    .Reflectividad = 0,
+                    .Transparencia = 0,
+                },
+                .Especular = 40,
+                .Refractive_index = 0,
+            },
         } },
         .{ .Sphere = .{
             .center = .{ .x = -25, .y = 0, .z = -40 },
             .radius = 5,
-            .material = vidrio,
+            .material = .{
+                .Color = V3FromColor(htmlColor("#cc8833")),
+                .Propiedades = .{
+                    .Albedo = 0.6,
+                    .Especular = 0.7,
+                    .Reflectividad = 0,
+                    .Transparencia = 0,
+                },
+                .Especular = 80,
+                .Refractive_index = 0,
+            },
         } },
         .{ .Sphere = .{
             .center = .{ .x = -37, .y = 0, .z = -40 },
             .radius = 5,
-            .material = diamante,
+            .material = .{
+                .Color = V3FromColor(htmlColor("#9933cc")),
+                .Propiedades = .{
+                    .Albedo = 0.6,
+                    .Especular = 0.6,
+                    .Reflectividad = 0,
+                    .Transparencia = 0,
+                },
+                .Especular = 50,
+                .Refractive_index = 0,
+            },
         } },
     };
 
     const lights = [_]Light{
         .{
             .Color = V3FromColor(htmlColor("#f00")),
-            .Intensity = 1,
+            .Intensity = 0.6,
             .Position = .{ .x = 5, .y = 100, .z = 15 },
         },
         .{
             .Color = V3FromColor(htmlColor("#fff")),
-            .Intensity = 1,
-            .Position = .{ .x = 0, .y = 0, .z = -250 },
+            .Intensity = 1.3,
+            .Position = .{ .x = -20, .y = 40, .z = 80 },
         },
     };
 
