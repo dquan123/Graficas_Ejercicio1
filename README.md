@@ -3,4 +3,5 @@ Primera versión:
 
 
 Segunda versión:
-<img width="869" height="599" alt="image" src="https://github.com/user-attachments/assets/1a7eb25e-0bbc-45a0-b94f-94be4d8e0d22" />
+<img width="845" height="529" alt="image" src="https://github.com/user-attachments/assets/582aa725-368e-460c-b8c9-5ef8282b008f" />
+
